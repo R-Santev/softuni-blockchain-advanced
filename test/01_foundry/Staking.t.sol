@@ -1,7 +1,10 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.28;
+
 import {Test} from "forge-std/Test.sol";
 
-import {StakeX} from "../src/StakeX.sol";
-import {StakingPool, ZeroAmountError} from "../src/Staking.sol";
+import {StakeX} from "../../src/01_foundry/StakeX.sol";
+import {StakingPool, ZeroAmountError} from "../../src/01_foundry/Staking.sol";
 import {console} from "forge-std/console.sol";
 
 contract StakingInitializationTest is Test {
@@ -82,6 +85,9 @@ contract StakingTest is Test {
         timeElapsed = bound(timeElapsed, 1 days, 2 * 365 days);
 
         vm.startPrank(userOne);
+
+        // Ensure user has enough tokens
+        deal(address(token), userOne, stakeAmount * 2); // Double the amount to ensure enough for fees/etc
 
         // Approve and stake
         token.approve(address(staking), stakeAmount);
