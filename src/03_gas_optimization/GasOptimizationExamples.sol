@@ -105,19 +105,22 @@ contract StudentContract {
 }
 
 contract CalldataVsMemory {
-    
     // Using memory (more expensive)
-    function processWithMemory(string memory data) external pure returns (uint256) {
+    function processWithMemory(
+        string memory data
+    ) external pure returns (uint256) {
         return bytes(data).length; // Simulate some processing
     }
 
     // Using calldata (cheaper)
-    function processWithCalldata(string calldata data) external pure returns (uint256) {
+    function processWithCalldata(
+        string calldata data
+    ) external pure returns (uint256) {
         return bytes(data).length; // Simulate some processing
     }
 }
 
 // keccak256("processWithCalldata(string)(uint256)") => get first 8 symbols
 
-[3][3]
-[[][][]][[][][]][[][][]]
+// [3][3]
+// [[][][]][[][][]][[][][]]
