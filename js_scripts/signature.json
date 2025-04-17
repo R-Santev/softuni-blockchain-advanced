@@ -1,0 +1,9 @@
+{
+  "signature": "0x604e8817ecc5cf05a5a089954ed2cfb6fe28291655f0c47e8ba10f11eb67c9b640adc93d1fbb3357ffea3493fea90b08f2437e1f3530a01e105037e8fbfba52a1b",
+  "message": {
+    "buyer": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "amount": "100000000000000000000",
+    "deadline": "1744830790"
+  },
+  "deadline": "1744830790"
+}
